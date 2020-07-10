@@ -1,0 +1,68 @@
+<template name="voteslider">
+    <div style="float: right; text-align: center;" class="button icon bottom aligned">
+        {{#if equals voteType 'down'}}
+        <button class="ui icon button votebutton down voteslider">
+            {{#if downvoted}}
+            <i class="thumbs down icon red"></i>
+            {{else}}
+            <i class="thumbs down icon"></i>
+            {{/if}}
+            <span>{{uniques content.votes votesSteem votesHive 'down'}}</span>
+        </button>
+        <button class="ui icon button votebutton down votesliderloader dsp-non">
+            <div class="ui mini red active centered inline loader"></div>
+        </button> {{else}}
+        <button class="ui icon button votebutton up voteslider">
+            {{#if upvoted}}
+            <i class="thumbs up icon red"></i>
+            {{else}}
+            <i class="thumbs up icon"></i>
+            {{/if}}
+            <span>{{uniques content.votes votesSteem votesHive 'up'}}</span>
+        </button>
+        <button class="ui icon button votebutton up votesliderloader dsp-non">
+            <div class="ui mini red active centered inline loader"></div>
+        </button>
+        {{/if}}
+        <div class="ui {{voteType}}vote popup top right transition hidden">
+            <div class="item">
+                <div class="ui equal width grid mrg-non">
+                    <div class="sixteen wide column pdg-non">
+                        <i class="icon yellow lightning"></i> <strong
+                            id="votevt{{voteType}}">{{displayPayout mainUser.vtDisplay 0}}</strong>VP {{voteVt}}
+                    </div>
+                </div>
+                <div class="slider-bubble" id="sliderBubble{{voteType}}"><span>{{displayPayout voteVt}}</span></div>
+                <input type="range" min="1" max="100" value="50" class="vslider" id="voterange{{voteType}}">
+                <div class="ui red four item mini menu compact voteslider">
+                    <a data-value="25" class="item">
+                        25%
+                    </a>
+                    <a data-value="50" class="active item">
+                        50%
+                    </a>
+                    <a data-value="75" class="item">
+                        75%
+                    </a>
+                    <a data-value="100" class="item">
+                        100%
+                    </a>
+                </div>
+                <div class="simplevote">
+                    <div class="ui tiny button green {{voteType}}vote upper"> {{voteType}}vote</div>
+                    <div class="ui tiny button addtag">Add a tag</div>
+                </div>
+                <div class="tagvote dsp-non {{voteType}}">
+                    <div class="ui tiny button removetag">Remove tag</div>
+                    {{#each content.allTags}}
+                    {{#unless equals t 'dtube'}}
+                    <input type="string" value="{{convertTag t}}" class="tagvalue" />
+                    {{/unless}}
+                    {{/each}}
+                    <div class="ui tiny button green {{voteType}}votetag upper"> {{voteType}}vote & tag</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>

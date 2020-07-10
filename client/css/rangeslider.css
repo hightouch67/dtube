@@ -1,0 +1,73 @@
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+  }
+  
+  /* The slider itself */
+  .vslider {
+    --thumbNumber: "5";
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    min-width: 200px;
+    width: 100%; /* Full-width */
+    height: 25px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+  }
+  
+  /* Mouse-over effects */
+  .vslider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+  }
+  
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+  .vslider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: transparent; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+  
+  .vslider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: transparent; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+
+  .slider-bubble{
+    position: absolute;
+    z-index: 999;
+    pointer-events: none;
+  }
+  .slider-bubble span{
+    width: 36px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    background: #F01A30;
+    color: #fff;
+    font-size: 12px;
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  .votebutton.loader{
+    border-style: solid;
+    background: transparent none !important;
+    border-width: 0px !important;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    padding: 0.78571429em 0 0.78571429em 0 !important;
+    margin-right: 25px !important;
+  }
+
+  .mini.red.active.loader::after{
+    border-color: #ff0000 transparent transparent;
+  }
