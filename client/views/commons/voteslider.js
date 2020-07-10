@@ -53,11 +53,8 @@ Template.voteslider.rendered = function () {
 
 
 Template.voteslider.events({
-    'change #voterange': function (event) {
-        console.log(event)
-    },
+
     'click .addtag': function (event) {
-        console.log('yoo')
         $('.tagvote').removeClass('dsp-non');
         $('.simplevote').addClass('dsp-non');
     },
