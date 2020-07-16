@@ -33,7 +33,6 @@ Template.verticalvoteslider.rendered = function () {
         return newNum;
     }
 
-    console.log(this.data.voteType)
     $(`.${this.data.voteType}.button.voteslider`)
         .popup({
             popup: $(`.${this.data.voteType}vote.popup`),

@@ -36,15 +36,8 @@
   .vslider:hover {
     opacity: 1; 
   }
-  
-  .vslider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px; 
-    background: transparent; 
-    cursor: pointer;
-  }
+
+
   
   .vslider::-moz-range-thumb {
     width: 25px; 
