@@ -1,42 +1,56 @@
 .slidecontainer {
-    width: 100%; /* Width of the outside container */
+    width: 100%; 
   }
   
-  /* The slider itself */
   .vslider {
     --thumbNumber: "5";
-    -webkit-appearance: none;  /* Override default CSS styles */
+    -webkit-appearance: none;
     appearance: none;
     min-width: 200px;
-    width: 100%; /* Full-width */
-    height: 25px; /* Specified height */
-    background: #d3d3d3; /* Grey background */
-    outline: none; /* Remove outline */
-    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    width: 100%; 
+    height: 25px; 
+    background: #d3d3d3; 
+    outline: none; 
+    opacity: 0.7; 
+    -webkit-transition: .2s; 
     transition: opacity .2s;
   }
+
+  .vslider.vertical {
+      --thumbNumber: "5";
+      -webkit-appearance: none; 
+      appearance: none;
+      min-width: 36px!important;
+      min-height: 200px;
+      width: 36px!important;
+      height: 200px;
+      background: #d3d3d3;
+      outline: none;
+      opacity: 0.7; 
+      -webkit-transition: .2s; 
+      transition: opacity .2s;
+      writing-mode: bt-lr; 
+      -webkit-appearance: slider-vertical; 
+    }
   
-  /* Mouse-over effects */
   .vslider:hover {
-    opacity: 1; /* Fully shown on mouse-over */
+    opacity: 1; 
   }
   
-  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
   .vslider::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
+    -webkit-appearance: none;
     appearance: none;
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    background: transparent; /* Green background */
-    cursor: pointer; /* Cursor on hover */
+    width: 25px;
+    height: 25px; 
+    background: transparent; 
+    cursor: pointer;
   }
   
   .vslider::-moz-range-thumb {
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    background: transparent; /* Green background */
-    cursor: pointer; /* Cursor on hover */
+    width: 25px; 
+    height: 25px; 
+    background: transparent;
+    cursor: pointer;
   }
 
   .slider-bubble{
@@ -57,6 +71,25 @@
     left: 50%;
     transform: translate(-50%, 0);
   }
+  .vertical-slider-bubble{
+    position: absolute;
+    z-index: 999;
+    pointer-events: none;
+  }
+  .vertical-slider-bubble span{
+    width: 36px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    background: #F01A30;
+    color: #fff;
+    font-size: 12px;
+    display: block;
+    position: absolute;
+    border-radius: 5px;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
 
   .votebutton.loader{
     border-style: solid;
@@ -71,3 +104,33 @@
   .mini.red.active.loader::after{
     border-color: #ff0000 transparent transparent;
   }
+  .compact.vertical.voteslider{
+    top:40px;
+    box-shadow: none;
+    border:none;
+  }
+.compact.vertical.voteslider .item{
+  font-size: 10px;
+  height: 50px;
+  padding-top: 20px;
+  border: none;
+  background: transparent!important;
+}
+.vertical.popup{
+  border: none;
+  bottom: -20px!important;
+  box-shadow: 0px -10px 9px 0px rgba(34, 36, 38, 0.12), 0px 0px 0px 0px rgba(34, 36, 38, 0.15)!important;
+  background: linear-gradient(0deg, rgba(2, 0, 36, 0) 0%, rgba(2, 0, 36, 0) 6%, rgb(255, 255, 255) 7%, rgb(255, 255, 255) 100%)!important;
+
+}
+.vertical.popup::before{
+  display: none;
+}
+
+.verticalslider.button{
+  background: transparent!important;
+}
+
+.verticalslider.button i{
+   margin: 0px!important; 
+}

@@ -106,6 +106,10 @@ Template.video.helpers({
   convertTag: function (tag) {
     var tagWithoutDtube = tag.replace("dtube-", "")
     return tagWithoutDtube
+  },
+  hasVoted: function (one, two) {
+    if (one || two) return true;
+    return false;
   }
 })
 
